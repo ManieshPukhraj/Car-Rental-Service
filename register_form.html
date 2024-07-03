@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="index1.css">
+</head>
+
+<body>
+  <div class="register-container">
+    <h2>Register</h2>
+    <form id="register_form" action="register.php" method="POST">
+
+      <input type="text" name="username" placeholder="Username" required style="width: 300px;">
+      <div class="password-input">
+        <input type="password" name="password" placeholder="Password" required style="width: 300px;">
+        <span class="tooltip">* Must be 6-12 characters long with one letter, number, special character</span>
+      </div>
+      <input type="password" name="cfm_password" placeholder="Confirm Password" required style="width: 300px;">
+      <input type="email" name="email" placeholder="Email" required style="width: 300px;">
+      <input type="text" name="name" placeholder="Name" required style="width: 300px;">
+      <input type="number" name="age" placeholder="Age" required style="width: 300px;">
+      <input type="text" name="phone_no" placeholder="Phone Number" required style="width: 300px;">
+      <button type="submit" style="width: 80px;">Register</button>
+    </form>
+    <p id="message"></p>
+    <br>
+    <a href="main.html" class="home-button">Back to Home</a>
+  </div>
+
+</body>
+
+</html>

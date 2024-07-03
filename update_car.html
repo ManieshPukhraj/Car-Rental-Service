@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Car Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      background-image: url("bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 680px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Update Car Details</h2>
+    <form id="updateCarForm" action="update_car.php" method="POST">
+      <div class="form-group">
+        <label for="old_reg_number">Old Registration Number:</label>
+        <input type="text" id="old_reg_number" name="old_reg_number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="new_reg_number">New Registration Number:</label>
+        <input type="text" id="new_reg_number" name="new_reg_number">
+      </div>
+
+      <div class="form-group">
+        <label for="car_name">Car Name:</label>
+        <input type="text" id="car_name" name="car_name">
+      </div>
+
+      <div class="form-group">
+        <label for="car_type">Car Type:</label>
+        <select id="car_type" name="car_type">
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+          <option value="hatchback">Hatchback</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="mileage">Mileage (km/l):</label>
+        <input type="number" id="mileage" name="mileage">
+      </div>
+
+      <div class="form-group">
+        <label for="rent_per_day">Rent per Day:</label>
+        <input type="number" id="rent_per_day" name="rent_per_day">
+      </div>
+
+      <input type="submit" value="Update Car Details">
+    </form>
+    <br>
+    <a href="admin_dashboard.html" style="margin-left: 35%;">Back to Admin Dashboard</a>
+  </div>
+</body>
+
+</html>

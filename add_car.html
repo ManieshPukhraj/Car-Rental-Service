@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Car</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 20px;
+      background-image: url("bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 5px solid greenyellow;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      const regNumber = document.getElementById('reg_number').value.toUpperCase();;
+      const regNumberPattern = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
+
+      const validStates = ["AP", "AR", "AS", "BR", "CG", "GA", "GJ", "HR", "HP", "JH", "KA", "KL", "MP", "MH", "MN", "ML", "MZ", "NL", "OD", "PB", "RJ", "SK", "TN", "TS", "TR", "UP", "UK", "WB", "AN", "CH", "DH", "DD", "DL", "JK", "LA", "LD", "PY"];
+
+      const stateCode = regNumber.substring(0, 2);
+
+      if (!regNumberPattern.test(regNumber) || !validStates.includes(stateCode)) {
+        document.getElementById('reg_number_error').textContent = 'Please enter a valid registration number (e.g., KA12CD3456).';
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Add Car</h2>
+    <form action="add_car.php" method="POST" onsubmit="return validateForm()">
+      <label for="car_name">Car Name:</label>
+      <input type="text" id="car_name" name="car_name" required><br>
+
+      <label for="car_type">Type of Car:</label>
+      <select id="car_type" name="car_type" required>
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="hatchback">Hatchback</option>
+        <option value="convertible">Convertible</option>
+        <option value="coupe">Coupe</option>
+        <option value="minivan">Minivan</option>
+        <option value="pickup">Pickup Truck</option>
+        <option value="van">Van</option>
+
+      </select><br>
+
+      <label for="mileage">Mileage (km/l):</label>
+      <input type="number" id="mileage" name="mileage" required><br>
+
+      <label for="reg_number">Registration Number:</label>
+      <input type="text" id="reg_number" name="reg_number" required>
+      <span id="reg_number_error" class="error"></span><br>
+
+      <label for="seats">Number of Seats (including driver):</label>
+      <input type="number" id="seats" name="seats" required><br>
+
+      <label for="rent_per_day">Rent per Day:</label>
+      <input type="number" id="rent_per_day" name="rent_per_day" required><br>
+
+      <input type="hidden" name="available" value="true">
+
+      <input type="submit" value="Add Car">
+      <a href="admin_dashboard.html" style="margin-left: 23%;">Return To Admin Dashboard</a>
+    </form>
+  </div>
+</body>
+
+</html>

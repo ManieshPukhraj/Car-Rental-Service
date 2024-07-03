@@ -1,0 +1,14 @@
+Project requierements:
+User table:
+
+Booked table:
+
+Car table:
+
+
+PHP:
+MongoDb:
+PHP DRIVERS:
+HTML,CSS:
+OTHER REQUIRED SOFTWARES:
+"D:\XAMPP_databse\htdocs\dbms_project\TCPDF-main\tools\.htaccess"
